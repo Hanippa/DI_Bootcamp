@@ -1,7 +1,6 @@
 *{
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(239, 239, 239);
 }
 nav{
     height: 80px;
@@ -9,6 +8,7 @@ nav{
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 .logo{
     width: 80px;
@@ -25,6 +25,7 @@ main{
     background-size: cover;
     display: flex;
     align-items: center;
+    color: white;
     
 }
 .nav-right{
@@ -58,4 +59,39 @@ footer{
     background-color: #1b1b1b69;
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+@media only screen and (max-width: 600px) and (max-width:768px){
+    .content h1{
+        font-size: 35px;
+    }
+    nav{
+        background-color: yellow;
+        color: black;
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width:992px){
+    .content h1{
+        font-size: 25px;
+    }
+    nav{
+        background-color: lightgreen;
+        color: black;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width:1200px){
+    nav{
+        background-color: red;
+        color: white;
+    }
+    .content {
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .content {
+        flex-direction: row;
+    } 
 }
