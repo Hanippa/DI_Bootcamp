@@ -1,0 +1,54 @@
+p{
+    box-shadow: 0px 0px 4px #27c76b;
+}
+.blue{
+display: inline-block;
+background-color: blue;
+width: 20px;
+height: 40px;
+}
+.white{
+    display: inline-block;
+    background-color: white;
+    width: 20px;
+    height: 40px;
+
+
+}
+.red{
+    display: inline-block;
+    background-color: red;
+    width: 20px;
+    height: 40px;
+}
+.flag{
+    border: black solid 1px;
+    width: 60px;
+    height: 40px;
+}
+.gray2{
+    width: 300px;
+    height: 70px;
+    background-color: lightgray;
+    position: relative;
+    border:gray solid 3px;
+    margin-top: 20px;
+
+}
+.orange2{
+    background-color: coral;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin: 5px;
+
+}
+.blue2{
+    background-color: lightblue;
+    
+    width: 60px;
+    height: 60px;
+    top: 0px;
+
+
+}
