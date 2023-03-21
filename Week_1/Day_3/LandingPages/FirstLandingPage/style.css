@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(assets/background.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.main-top{
+width: 80%;
+text-align: center;
+margin: 40px;
+font-size: 30px;
+}
+.main-center{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 40px;
+}
+.main-center h1{
+    color: #6975c8;
+}
+.stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.stats p{
+    margin-top: -20px;
+    font-size: 10px;
+}
+.main-bottom{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 40px;
+
+}
+.review{
+    width: 25%;
+}
+.review-top{
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    padding: 60px 30px;
+}
+.review-bottom{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+}
+.review-bottom img{
+    width: 80px;
+    border-radius: 80px;
+    margin-top: -40px;
+}
+div.review:nth-child(3) > div:nth-child(2){
+    background-color: #47c1bf;
+}
+div.review:nth-child(2) > div:nth-child(2){
+    background-color: #5c6ac4;
+}
+div.review:nth-child(1) > div:nth-child(2){
+    background-color: #fb8b8a;
+}
