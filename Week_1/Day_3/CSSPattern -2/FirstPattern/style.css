@@ -1,14 +1,11 @@
 .threebythreecontainer{
-width: 200px;
-height: 200px;
-background-color: lightblue;
+width: 150px;
+height: 150px;
 display: grid;
 grid-template-rows: 1fr 1fr 1fr;
 grid-template-columns: 1fr 1fr 1fr;
+gap: 5px;
 
-}
-*{
-    margin: 0;
 }
 .box{
     background-color: orange;
@@ -41,8 +38,9 @@ grid-template-columns: 1fr 1fr 1fr;
     background-color: #ffb26d;
 }
 .twentyfivebytwentyfive{
-    width: 1000px;
+    width: 30%;
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(5,1fr);
+    gap: 5px;   
 }

@@ -3,24 +3,18 @@
 }
 .sixteenbysixteen{
 display: grid;
-grid-template-rows: repeat(16,1fr);
+grid-template-rows: repeat(9,1fr);
 grid-template-columns: repeat(16, 1fr);
+width: 100vw;
+height: 100vh;
 
 }
-.box{
-    height: 60px;
-    background-color: orange;
-    border: white solid 1px;
+.white{
+background-color: #ffffff;
 }
-.gray-1{
-background-color: #cccccc;
+.light-red{
+background-color: #e67f7e;
 }
-.gray-2{
-background-color: #999999;
-}
-.gray-3{
-background-color: #5d5d5d;
-}
-.gray-4{
-background-color: #333333;
+.dark-red{
+background-color: #d83e3b;
 }

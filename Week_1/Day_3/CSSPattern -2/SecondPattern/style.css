@@ -5,13 +5,12 @@
 display: grid;
 grid-template-rows: repeat(16,1fr);
 grid-template-columns: repeat(16, 1fr);
+width: 100vw;
+height: 100vh;
+gap: 5px;
 
 }
-.box{
-    height: 60px;
-    background-color: orange;
-    border: white solid 1px;
-}
+
 .gray-1{
 background-color: #cccccc;
 }
