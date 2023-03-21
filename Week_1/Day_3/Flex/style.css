@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(217, 217, 217);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.exersice{
+    background-color: lightgray;
+    width: 500px;
+    height: 400px;
+    margin: 20px;
+    border: gray solid 1px;
+}
+.exersice:nth-child(6){
+    height: 80px;
+}
+div.exersice:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    resize: both;
+    overflow: auto;
+    gap: 30px;
+}
+div.exersice:nth-child(4){
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    resize: both;
+    overflow: auto;
+    gap: 30px;
+}
+div.exersice:nth-child(6){
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    resize: both;
+    overflow: auto;
+}
+div.exersice:nth-child(2) > div{
+    background-color: lightblue;
+    border: black solid 1px;
+    flex-grow: 1;
+}
+div.exersice:nth-child(4) > div{
+    background-color: lightblue;
+    border: black solid 1px;
+    flex-grow: 1;
+}
+div.exersice:nth-child(6) > div{
+    background-color: lightblue;
+    border: black solid 1px;
+    flex-grow: 1;
+}
+div.exersice:nth-child(2) > div:nth-child(2){
+    width: 70%;
+    align-self: center;
+    flex-basis: 30%;
+}
+div.exersice:nth-child(4) > div:nth-child(2){
+    width: 20%;
+    align-self: flex-end;
+}
+div.exersice:nth-child(6) > div:nth-child(1){
+    flex-basis: 70px;
+    flex-grow: 0;
+    background-color: #909bed;
+}
+div.exersice:nth-child(6) > div:nth-child(3){
+    background-color: #f08c81;
+}
+
+div.exersice:nth-child(8){
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    resize: both;
+    overflow: auto;
+    align-items: center;
+}
+div.exersice:nth-child(8) > div:nth-child(1){
+    width: 70%;
+}
+div.exersice:nth-child(8) > div:nth-child(3){
+    width: 70%;
+}
+div.exersice:nth-child(8) > div:nth-child(2){
+    width: 95%;
+}
+div.exersice:nth-child(8) > div{
+    background-color: lightblue;
+    border: black solid 1px;
+    flex-grow: 1;
+    margin: 10px;
+}
