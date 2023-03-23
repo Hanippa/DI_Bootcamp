@@ -10,7 +10,7 @@ a , a:hover , a:visited {
 }
 .container-main{
     width: 100vw;
-    height: 200vh;
+    height: 250vh;
     background: linear-gradient(45deg, #E56399, #7F96FF);
     background-size: 400% 400%;
     animation: GradientBackground 19s ease infinite;
@@ -193,34 +193,42 @@ a , a:hover , a:visited {
     align-items: center;
 }
 .project-info img{
-    opacity: 70%;
+    opacity: 20%;
     width: 50px;
 }
 .main-footer{
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 200px;
-    background-color: lightcoral;
+    background-color: #bf76bf;
 }
 .footer-right{
+    height: 100%;
     width: 30%;
+    display: flex;
+    justify-content: center;
 }
 .footer-left{
-    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 30%;
 }
 .spotify{
+    margin: 20px;
     color: black;
-    font-size: 20px;
+    font-size: 17px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(0, 255, 8, 0.468);
     border-radius: 50px;
-    padding: 10px;
-    width: 270px;
+    padding: 10px 20px;
+    width: 400px;
 }
 .spotify img{
     width: 50px;
