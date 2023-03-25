@@ -248,6 +248,56 @@ width: 100px;
 display: flex;
 justify-content: center;
 }
+.logo{
+    opacity: 80%;
+    box-shadow: 1px 2px 5px rgb(255, 255, 255) , -1px -2px 5px rgb(255, 255, 255);
+    height: 20vw;
+    width: 20vw;
+    border-radius: 200px;
+}
+.container-about{
+    justify-content: space-around;
+    display: flex;
+    max-height: 500px;
+}
+.about-right{
+    font-size: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.about-left{
+    flex-direction: column-reverse;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 50px 10px;
+    gap: 70px;
+}
+.skills{
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.skill{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: #7f96ff44;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 5px;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.skill-icon{
+    width: 5vw;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
 @keyframes wave {
     0%{
         transform: rotate(0deg)
