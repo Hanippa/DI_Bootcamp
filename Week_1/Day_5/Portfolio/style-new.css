@@ -1,0 +1,317 @@
+*{
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    color: #dbfcff;
+    text-align: center;
+    scroll-behavior: smooth;
+    
+}
+body{
+    overflow-x: hidden;
+    
+}
+.container-main{
+    
+    width: 100vw;
+    height: 400vh;
+    max-width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, #E56399, #7F96FF);
+    background-size: 400% 400%;
+    animation: GradientBackground 19s ease infinite;
+}
+.header-main{
+    z-index: 1;
+    flex-basis: 250px;
+    margin: 10px;
+    
+}
+.nav-item{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+    background-color: #320e3b10;
+    padding: 5px 10px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item span{
+    margin: 0px 10px;
+}
+.nav-items-container{
+    display: flex;
+    border-radius: 100px;
+    
+}
+.main-title{
+    font-family: 'Unbounded', cursive;
+    font-size: 7vw;
+}
+.container-info{
+    z-index: 1;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.footer-main{
+    z-index: 1;
+    flex-basis: 50px;
+}
+.container-section{
+    flex-grow: 1;
+    
+}
+#projects{
+    z-index: 2;
+    flex-grow: 3;
+    display: grid;
+    gap:30px;
+    padding:30px;
+    grid-template-areas: "header header header"
+                         "project-1 project-1 project-2"
+                         "project-1 project-1 project-2"
+                         "project-1 project-1 project-2"
+                         "project-1 project-1 project-2"
+                         "project-3 project-3 project-3"
+                         "project-3 project-3 project-3"
+                         "project-3 project-3 project-3"
+                         "project-3 project-3 project-3";
+}
+
+#projects .section-title{
+    margin: 0;
+    grid-area: header;
+    border-radius: 30px;
+}
+.project-1{
+    grid-area: project-1;
+    background-color: lavender;
+    border-radius: 30px;
+}
+.project-2{
+    background-color: ghostwhite;
+    grid-area: project-2;
+    border-radius: 30px;
+}
+.project-3{
+    background-color: blueviolet;
+    grid-area: project-3;
+    border-radius: 30px;
+}
+.star:nth-child(2){
+    animation: star-hop 2s ease-in-out infinite;
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    width:4vw;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
+.star:nth-child(3){
+    animation: star-hop 2s ease-in-out infinite;
+    top: 60%;
+    right: 5%;
+    position: absolute;
+    width: 4vw;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
+.spark{
+    animation: star-hop 3s ease-in-out infinite;
+    position: absolute;
+    width: 20px;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
+.shooting-star{
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
+#shooting-star-1{
+    width: 10px;
+    animation: star-shoot-1 6s ease-in-out 3s infinite;
+}
+#shooting-star-2{
+    width: 20px;
+    animation: star-shoot-2 8s ease-in-out 3s infinite;
+}
+#shooting-star-3{
+    width: 15px;
+    animation: star-shoot-3 4s ease-in-out 3s infinite;
+}
+.spark:nth-child(4){
+    left: 100px;
+    top: 500px;
+}
+.spark:nth-child(5){
+    left: 200px;
+    top: 600px;
+}
+.spark:nth-child(6){
+    left: 500px;
+    top: 620px;
+}
+.spark:nth-child(7){
+    left: 800px;
+    top: 700px;
+}
+.spark:nth-child(8){
+    left: 1000px;
+    top: 450px;
+}
+.spark:nth-child(9){
+    right: 200px;
+    top: 580px;
+}
+.spark:nth-child(10){
+    right: 360px;
+    top: 300px;
+}
+.spark:nth-child(11){
+    left: 1200px;
+    top: 800px;
+}
+.spark:nth-child(12){
+    left: 300px;
+    top: 820px;
+}
+.spark:nth-child(13){
+    right: 300px;
+    top: 720px;
+}
+.spark:nth-child(14){
+    left: 300px;
+    top: 320px;
+}
+.spark:nth-child(15){
+    left: 800px;
+    top: 220px;
+}
+.spark:nth-child(16){
+    left: 1200px;
+    top: 200px;
+}
+.spark:nth-child(17){
+    left: 450px;
+    top: 200px;
+}
+.spark:nth-child(18){
+    left: 400px;
+    top: 435px;
+}
+.spark:nth-child(19){
+    right: 400px;
+    top: 420px;
+}
+.nav-item:hover span{
+    animation: wave 2s ease-in-out infinite;
+}
+.brush{
+    transition: all 2s;
+    position: fixed;
+    margin: 20px;
+    bottom: 0px;
+    width: 70px;
+    height: 45px;
+    object-fit: cover;
+    object-position: 100% 100%;
+    filter: invert(100%) sepia(54%) saturate(6045%) hue-rotate(172deg) brightness(115%) contrast(105%);
+}
+.brush-a:hover .brush{
+    height: 70px;
+}
+#welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paint{
+    z-index: 0;
+    top: 100vh;
+    position: absolute;
+    width: 5px;
+    height: 300vh;
+    background-color: #dbfcff00;
+    box-shadow: 1px 2px 140px #dbfcff41 , -1px -2px 140px #dbfcff41;
+}
+.brush-a{
+    z-index: 5;
+bottom: 0px;
+position: fixed;
+height: 100px;
+width: 100px;
+display: flex;
+justify-content: center;
+}
+@keyframes wave {
+    0%{
+        transform: rotate(0deg)
+    }
+    50%{
+        transform: rotate(-20deg)
+    } 
+    100%{
+        transform:rotate(0deg);
+    } 
+}   
+@keyframes star-hop {
+0%{
+    transform: translateY(0px);
+}
+50%{
+    transform: translateY(5px);
+} 
+100%{
+    transform: translateY(0px);
+}
+
+}
+@keyframes star-shoot-1 {
+    from{
+        top: -10%;
+        right: 30%;
+    }
+    to{
+        top: 80%;
+        right: 110%;
+    } 
+    }
+    @keyframes star-shoot-2 {
+        from{
+            top: -10%;
+            right: 10%;
+        }
+        to{
+            top: 110%;
+            right: 110%;
+        } 
+        }
+        @keyframes star-shoot-3 {
+            from{
+                top: 20%;
+                right: -10%;
+            }
+            to{
+                top: 110%;
+                right:110%;
+            } 
+            }
+            @keyframes GradientBackground {
+                0% {
+                  background-position: 0% 50%;
+                }
+            
+                50% {
+                  background-position: 100% 50%;
+                }
+            
+                100% {
+                  background-position: 0% 50%;
+                }
+              };
+            

@@ -54,10 +54,7 @@ a , a:hover , a:visited {
 }
 .main-title{
     font-family: 'Unbounded', cursive;
-    font-size: 100px;
-    margin-top: 150px;
     text-align: center;
-    position: relative;
 }
 .main-description{
     margin-top: -50px;
