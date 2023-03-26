@@ -1,4 +1,4 @@
-
+import random
 # Instructions
 
 #     Using the input function, ask the user for a string. The string must be 10 characters long.
@@ -33,3 +33,6 @@ else:
 for num in range(0 , 10):
     word += user_string[num]
     print(word)
+shuffleword = list(word)
+random.shuffle(shuffleword)
+print(''.join(shuffleword))
