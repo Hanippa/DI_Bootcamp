@@ -49,20 +49,29 @@ else:
 # Exercise 4: Fruit Shop
 # Instructions
 
-# items = {
-#     "banana": 4,
-#     "apple": 2,
-#     "orange": 1.5,
-#     "pear": 3
-# }
+items = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
 
 #     Using the dictionary above, each key-value pair represents an item and its price - print all the items and their prices in a sentence.
 #     Using the dictionary below, each value are dictionaries containing both the price and the amount of items in stock -
 #     write some code to calculate how much it would cost to buy everything in stock.
 
-# items = {
-#     "banana": {"price": 4 , "stock":10},
-#     "apple": {"price": 2, "stock":5},
-#     "orange": {"price": 1.5 , "stock":24},
-#     "pear": {"price": 3 , "stock":1}
-# }
+for i in items:
+    print(f"We have {i}s for {items[i]} dollars ")
+
+
+
+items = {
+    "banana": {"price": 4 , "stock":10},
+    "apple": {"price": 2, "stock":5},
+    "orange": {"price": 1.5 , "stock":24},
+    "pear": {"price": 3 , "stock":1}
+}
+stock_price = 0
+for i in items:
+    stock_price += items[i]["price"]
+print(f"You can buy everything in stock for {stock_price} dollars")
