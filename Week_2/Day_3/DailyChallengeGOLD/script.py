@@ -24,10 +24,11 @@ if user_choice == "encrypt":
     data = input("data to ecrypt : ")
     offset = input("encryption offset : ")
     for i in data:
-        result += chr(ord(i) - int(offset))
+        result += chr(ord(i) + int(offset))
 elif user_choice == "decrypt":
     data = input("data to decrypt : ")
     offset = input("encryption offset")
     for i in data:
-        result += chr(ord(i) + int(offset))
+        result += chr(ord(i) - int(offset))
+
 print(result)
