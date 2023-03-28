@@ -23,7 +23,8 @@ birthday_cake = """       ___________
    |:B:i:r:t:h:d:a:y:|
    |                 |
    ~~~~~~~~~~~~~~~~~~~"""
+
 date_of_birth = input("What is your date of birth? (DD/MM/YYYY) : ")
 age = int(str(2023 - int(date_of_birth[6:]))[-1]) 
-birthday_cake = birthday_cake[:8] + ("i" * age) +birthday_cake[8+age:]
+birthday_cake = birthday_cake[:((4-age//2)+8)] + ("i" * age) +birthday_cake[((4-age//2)+8)+age:]
 print(birthday_cake)
