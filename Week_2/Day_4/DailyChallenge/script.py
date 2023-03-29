@@ -41,17 +41,17 @@ import re
 #String to enter (same string given but without new lines(it breaks the terminal))
 # 7i3Tsih%xi #sM $a #t%^r!
 
-def string_to_matrix(string):
+def string_to_matrix(string : str) -> list():
     string_list = list(string)
     list_1 = []
     for i in range(0, len(string_list)-2 , 3):
         list_1.append([string_list[i] , string_list[i+1] , string_list[i+2]])
     return list_1
 
-def matrix_decode(list):
+def matrix_decode(list:list()) -> str:
     for j in range(3):
         for i in list:
             if re.search("([A-Za-z ])" , i[j]):
                 print(i[j] , end='')
 matrix = string_to_matrix(input("string : "))
-print(matrix_decode(matrix))
+matrix_decode(matrix)
