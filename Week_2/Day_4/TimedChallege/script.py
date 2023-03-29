@@ -11,5 +11,11 @@
 # String: This is a great example
 # Character: y
 # 0
+
+s = input("String: ")
+ch = input("Character: ")
+#{Write your code here
 char_num = lambda string , char : string.count(char)
-print(char_num('helloooooooooooooooooooooo', 'o'))
+print(char_num(s, ch))
+
+#}
