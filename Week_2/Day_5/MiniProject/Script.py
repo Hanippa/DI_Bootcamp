@@ -10,15 +10,21 @@
 #     Players take turns putting their marks (O or X) in empty squares.
 #     The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.
 #     When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
-# ["x","x","x"],["x","x","x"],["x","x","x"]
 
 def display_board(board) -> None:
     '''
      To display the Tic Tac Toe board (GUI).
     '''
-    print(board[0])
-    print(board[1])
-    print(board[2])
+    print("\n")
+    print(" TIC -- TAC -- TOE")
+    print("--⌒ Ｙ⌒Ｙ⌒Ｙ⌒Ｙ⌒--")
+    for i in board:
+        print("|  ", end="")
+        for char in i:
+            print(char , end="  |  ")
+        print("\n")
+    print("┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬")
+    print("\n")
 
 
 def player_input(player:str, board, row:int , column:int) -> None:
@@ -30,47 +36,76 @@ def player_input(player:str, board, row:int , column:int) -> None:
     else:
         print("Spot already used!")
 
-def check_win(board , player):
+def check_win(board , player) -> bool:
     '''
     To check whether there is a winner or not.
     '''
+
+    #vertical scan
     index = 0
-    for y in board:
-        for z in range(len(y)):
-            if y[z] == player:
+    column = 0
+    for n in range(len(board)):
+        for y in board:
+            if y[column] == player:
                 index += 1
             if index == 3:
                 return True
+        column += 1
+        index = 0
 
-
+    #horizontal scan
     index = 0
     for i in board:
         if i.count(player) == 3:
             return True
 
-
-
+    
+    #left to right diogonal scan
+    index = 0
     for h in range(len(board)):
         if board[h-1][h-1] == player:
             index+=1
         if index == 3:
             return True
 
-
+    # right to left diogonal scan
     index = 0
+    count = 0
     for p in range(len(board), 0, -1):
         if board[index][p-1] != player:
-            index = 0
-        index+=1
-        if index == 3:
+            count = 0
+        else:
+            count += 1
+        if count == 3:
             return True
+        index += 1
     return False
+
+
+
 def play():
     '''
      The main function, which calls all the functions created above.
     '''
-
-user_board = (["X","O","O"],
-              ["O","O","X"],
-              ["X","X","X"])
-print(check_win(user_board, "O"))
+    print()
+    user_board = (["-","-","-"],
+                  ["-","-","-"],
+                  ["-","-","-"])
+    game_round = 0
+    while not(check_win(user_board, "X")) and not(check_win(user_board, "O")) and game_round < 9:
+        display_board(user_board)
+        player_input("O", user_board, int(input(" Player 'O' Row : ")), int(input(" Player 'O' Column : ")))
+        display_board(user_board)
+        game_round += 1
+        player_input("X", user_board, int(input(" Player 'X' Row : ")), int(input(" Player 'X' Column : ")))
+        display_board(user_board)
+        game_round += 1
+    if game_round > 8:
+        print("Tie")
+        
+    else:
+        if check_win(user_board, "X"):
+            print("Player X won ! ")
+        elif check_win(user_board, "O"):
+            print("Player O won ! ")
+play()
