@@ -123,6 +123,7 @@ class Zoo:
     def __init__(self,zoo_name):
         self.name = zoo_name
         self.animals = []
+        self.animal_dict = {}
     def add_animal(self,new_animal):
         self.animals.append(new_animal) if not self.animals.count(new_animal) else print(new_animal,"Already in list")
     def get_animals(self):
@@ -130,28 +131,25 @@ class Zoo:
     def sell_animal(self, animal_sold):
        self.animals.remove(animal_sold) if self.animals.count(animal_sold)>0 else print(animal_sold,"Not in list")
     def sort_animals(self):
-        animal_dict ={}
         self.animals.sort()
-        print(self.animals)
         for i in range(len(self.animals)-1):
             if self.animals[i][0] == self.animals[i+1][0]:
                animal_dict[len(animal_dict)+1] = [self.animals[i]]
                animal_dict[len(animal_dict)].append(self.animals[i+1])
-                
-
-        print(animal_dict)
+    def get_groups(self):  
+        print(self.animal_dict)
             
 
-fzoos = Zoo("Fzoos")
-fzoos.add_animal("Emo")
-fzoos.add_animal("Giraffe")
-fzoos.add_animal("Cat")
-fzoos.add_animal("Cougar")
-fzoos.add_animal("Eel")
-fzoos.add_animal("Bear")
-fzoos.add_animal("Baboon")
+ramat_gan_zoo = Zoo("ramat_gan_zoo")
+ramat_gan_zoo.add_animal("Emo")
+ramat_gan_zoo.add_animal("Giraffe")
+ramat_gan_zoo.add_animal("Cat")
+ramat_gan_zoo.add_animal("Cougar")
+ramat_gan_zoo.add_animal("Eel")
+ramat_gan_zoo.add_animal("Bear")
+ramat_gan_zoo.add_animal("Baboon")
 
-fzoos.add_animal("Baboon")
-fzoos.sell_animal("Bee")
-fzoos.get_animals()
-fzoos.sort_animals()
+ramat_gan_zoo.add_animal("Baboon")
+ramat_gan_zoo.sell_animal("Bee")
+ramat_gan_zoo.get_animals()
+ramat_gan_zoo.sort_animals()
