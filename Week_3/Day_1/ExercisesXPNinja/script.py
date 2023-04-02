@@ -20,25 +20,39 @@
 
 
 class Phone:
+
     def __init__(self, phone_number):
         self.phone_number = phone_number
         self.call_history = []
         self.messages = []
+
+
     def call(self,other_phone):
-        print(f"{self.phone_number} has called {phone_number.phone_number}")
-        self.call_history.append(phone_number)
+        print(f"{self.phone_number} has called {other_phone.phone_number}")
+        self.call_history.append(other_phone.phone_number)
+        other_phone.call_history.append(self.phone_number)
+
+
     def show_call_history(self):
-        print(self.call_history)
+        print(*self.call_history ,sep=" -> ")
+
+
     def send_message(self,other_phone,umessage):
-        message = {}
-        message["to"] = other_phone
-        message["from"] = self.phone_number
-        message["message"] = umessage
-        self.massages.append(message)
+        dict_messages = {}
+        dict_messages["to"] = other_phone.phone_number
+        dict_messages["from"] = self.phone_number
+        dict_messages["message"] = umessage
+        self.messages.append(dict_messages)
+        other_phone.messages.append(dict_messages)
+
     def show_outgoing_messages(self):
-        return [x for x in self.messages if x["to"]!=self.phone_number]
+        return [x["message"] + " -> "+ x["to"] for x in self.messages if x["to"]!=self.phone_number]
+
+
     def show_incoming_messages(self):
-        return [x for x in self.messages if x["from"]!=self.phone_number]
+        return [x["from"] + " -> "+ x["message"] for x in self.messages if x["from"]!=self.phone_number]
+
+
     def show_messages_from(self,num):
         return [x for x in self.messages if x["from"]==num]
 
@@ -48,3 +62,13 @@ Dekel.call(Nadav)
 Dekel.call(Nadav)
 Dekel.call(Nadav)
 Dekel.call(Nadav)
+Dekel.show_call_history()
+Dekel.send_message(Nadav, "Hey")
+Dekel.send_message(Nadav, "How")
+Dekel.send_message(Nadav, "Are")
+Dekel.send_message(Nadav, "You")
+Nadav.send_message(Dekel, "Hey!, I'm great how are you?")
+print(Dekel.show_outgoing_messages())
+print(Dekel.show_incoming_messages())
+
+print(Nadav.show_messages_from("0501242354"))
