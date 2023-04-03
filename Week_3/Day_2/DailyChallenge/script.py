@@ -61,37 +61,46 @@ class Pagination:
         self.list = list
         self.pageSize = int(pageSize)
         self.totalPages = len(self.list)
-        self.currentPage = 13
+        self.currentPage = 1
     def getVisibleItems(self):
         relist=[]
         for i in range(self.currentPage*self.pageSize-self.pageSize,(self.currentPage*self.pageSize)):
-            relist.append(self.list[i])
+            if i < self.totalPages:
+                relist.append(self.list[i])
         return relist
-    # def nextPage(self):
-
-    # def prevPage(self):
-
-    
-    # def goToPage(self,page):
-
-    # def firstPage(self):
-        
-    # def lastPage(self):
-        
+    def nextPage(self):
+        if self.currentPage+1 < self.totalPages:
+            self.currentPage +=1
+    def prevPage(self):
+        if self.currentPage-1 > 0:
+            self.currentPage -= 1
+            print(self.currentPage)
+    def goToPage(self,page):
+        if int(page) <= self.totalPages:
+            self.currentPage = int(page)
+        else:
+            goToPage(page-1)
+    def firstPage(self):
+        self.currentPage = 1
+    def lastPage(self):
+        self.currentPage = (self.totalPages // self.pageSize) +1
 
 alphabetList = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(' ')
 
-p = Pagination(alphabetList, 2)
+p = Pagination(alphabetList, 4)
 
 print(p.getVisibleItems()) 
 # ["a", "b", "c", "d"]
 
-# p.nextPage()
+p.nextPage()
 
-# print(p.getVisibleItems())
-# # ["e", "f", "g", "h"]
+print(p.getVisibleItems())
+# ["e", "f", "g", "h"]
 
-# p.lastPage()
+p.lastPage()
 
-# print(p.getVisibleItems())
-# # ["y", "z"]
+print(p.getVisibleItems())
+# ["y", "z"]
+
+p.goToPage(3)
+print(p.getVisibleItems())
