@@ -53,24 +53,20 @@ sara_pets.walk()
 
 #     Create 3 dogs and run them through your class.
 
-class Dog:
-    def __init__(self, name,age,weight):
-        self.name = name
-        self.age = age
-        self.weight = weight
-    def bark(self):
-        return f"{self.name} is barking"
-    def run_speed(self):
-        return (self.weight / self.age) *10
-    def fight(self , other_dog):
-        if self.run_speed() * self.weight > other_dog.run_speed() * other_dog.weight:
-            return f"{self.name} won the fight"
-        else:
-            return f"{other_dog.name} won the fight"
+
+
+
+
+
+#######################   Exercise in dog.py file ###############################
+from dog import Dog 
 grace = Dog('grace', 5, 30)
 wiskers = Dog('wiskers', 9, 10)
 brazy = Dog('brazy',3, 15)
 print(brazy.fight(wiskers))
+
+
+
 
 
 # 🌟 Exercise 3 : Dogs Domesticated
@@ -89,3 +85,12 @@ print(brazy.fight(wiskers))
 #             “dog_name stands on his back legs”.
 #             “dog_name shakes your hand”.
 #             “dog_name plays dead”.
+
+
+from dog import PetDog
+pretty = PetDog('pretty', 5, 10,True)
+pust = PetDog('pust', 10, 9,False)
+lalipa = PetDog('lalipa', 13, 17,False)
+lalipa.train()
+lalipa.do_a_trick()
+lalipa.play(pust,pretty)
