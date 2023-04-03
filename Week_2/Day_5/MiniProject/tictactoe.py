@@ -92,20 +92,23 @@ def play():
                   ["-","-","-"],
                   ["-","-","-"])
     game_round = 0
-    while not(check_win(user_board, "X")) and not(check_win(user_board, "O")) and game_round < 9:
+    while game_round < 9:
         display_board(user_board)
         player_input("O", user_board, int(input(" Player 'O' Row : ")), int(input(" Player 'O' Column : ")))
-        display_board(user_board)
         game_round += 1
-        player_input("X", user_board, int(input(" Player 'X' Row : ")), int(input(" Player 'X' Column : ")))
-        display_board(user_board)
-        game_round += 1
-    if game_round > 8:
-        print("Tie")
-        
-    else:
-        if check_win(user_board, "X"):
-            print("Player X won ! ")
-        elif check_win(user_board, "O"):
+        if check_win(user_board, "O"):
+            display_board(user_board)
             print("Player O won ! ")
+            return
+        if game_round == 9:
+            break
+        display_board(user_board)
+        player_input("X", user_board, int(input(" Player 'X' Row : ")), int(input(" Player 'X' Column : ")))
+        game_round += 1
+        if check_win(user_board, "X"):
+            display_board(user_board)
+            print("Player X won ! ")
+            return
+    display_board(user_board)
+    print("Tie")
 play()

@@ -134,8 +134,9 @@ class Zoo:
         self.animals.sort()
         for i in range(len(self.animals)-1):
             if self.animals[i][0] == self.animals[i+1][0]:
-               animal_dict[len(animal_dict)+1] = [self.animals[i]]
-               animal_dict[len(animal_dict)].append(self.animals[i+1])
+               self.animal_dict[len(self.animal_dict)+1] = [self.animals[i]]
+               self.animal_dict[len(self.animal_dict)].append(self.animals[i+1])
+
     def get_groups(self):  
         print(self.animal_dict)
             
@@ -153,3 +154,4 @@ ramat_gan_zoo.add_animal("Baboon")
 ramat_gan_zoo.sell_animal("Bee")
 ramat_gan_zoo.get_animals()
 ramat_gan_zoo.sort_animals()
+print(ramat_gan_zoo.animal_dict)
