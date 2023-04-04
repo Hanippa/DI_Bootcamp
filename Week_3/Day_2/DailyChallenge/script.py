@@ -104,3 +104,10 @@ print(p.getVisibleItems())
 
 p.goToPage(3)
 print(p.getVisibleItems())
+
+
+print("\n")
+p.goToPage(1)
+for i in range(1,8):
+    print(p.getVisibleItems())
+    p.nextPage()
