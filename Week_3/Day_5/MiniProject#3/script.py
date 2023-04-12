@@ -45,16 +45,50 @@
 #     Style the bar chart
 from pyowm.owm import OWM
 from datetime import datetime
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 owm = OWM('80202efc1b08f86c4a17a92bebaf1d4d')
 mgr = owm.weather_manager()
+mgr2 = owm.airpollution_manager()
 
-observation = mgr.weather_at_place('Tel Aviv,Israel')
+
+location = input("WHAT IS YOUR LOCATION? : ")
+observation = mgr.weather_at_place(location)
 w = observation.weather
 
 
 print(f"-------------------\nTHE WEATHER NOW IN {observation.location.name}\nTHE TEMPRATURE IS : {w.temperature('celsius')['temp']}\nTHE WIND SPEED IS : {w.wind()['speed']}\nTHE SUN WILL RISE AT : {datetime.utcfromtimestamp(w.srise_time)}\nAND SET AT : {datetime.utcfromtimestamp(w.sunset_time())}\nENJOY--------------")
 
 
-reg = owm.city_id_registry()
-                      
+
+daily_forecast = mgr.forecast_at_place(location, '3h').forecast
+for weather in daily_forecast:
+    print("WEATHER FOR : ",weather.reference_time('iso'), weather.status)
+print(mgr2.air_quality_at_coords(32.0879267,34.7622267).air_quality_data)
+
+
+humidata = {}
+humidity_for = mgr.forecast_at_place(location, '3h').forecast
+for weather in humidity_for:
+    humidata[weather.reference_time('iso')] = weather.humidity
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 3}
+
+plt.rc('font', **font) 
+
+# data = {'C':20, 'C++':15, 'Java':30}
+days = list(humidata.keys())
+values = list(humidata.values())
+  
+fig = plt.figure(figsize = (20, 5))
+ 
+plt.bar(days, values, color ='#2179b8',
+        width = 0.7)
+
+plt.xlabel("DAYS")
+plt.ylabel("HUMIDITY(%)")
+plt.title("HUMIDITY FORECAST")
+plt.show()
