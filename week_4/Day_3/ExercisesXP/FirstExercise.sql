@@ -86,31 +86,37 @@ INSERT INTO customer_review(
 
 
 
-
+--1
 UPDATE film SET language_id = (SELECT language_id FROM language WHERE name = 'Mandarin') WHERE film_id = 10 or film_id = 13;
+
+--2
 ---- The addresss forign key, It changees that way you insert date into the table by changing the way you type an address, you first need to add your address to the address table and only the add the id of the added address to the customer table.
+
+--3
 DROP TABLE customer_review; -- It worked, becuase the customer review is connecter to another table and not vice versa.
+
+--4
 SELECT COUNT(*) from rental WHERE return_date is null;
 
 
-
+--5
 SELECT * from rental JOIN inventory ON rental.inventory_id = inventory.inventory_id
 JOIN film ON inventory.film_id = film.film_id
 WHERE return_date is null ORDER BY rental_rate DESC LIMIT 30;
 
 
 
-
+--6 - 1
 SELECT * FROM film JOIN film_actor ON film.film_id = film_actor.film_id JOIN actor ON film_actor.actor_id = actor.actor_id
 WHERE actor.first_name = 'Penelope' and actor.last_name = 'Monroe' and film.description LIKE '%Sumo%Wrestler%';
 
 
-
+--6 - 2
 SELECT * FROM film JOIN film_category ON film.film_id = film_category.film_id JOIN category ON film_category.category_id = category.category_id
 WHERE film.rating = 'R' AND category.name='Documentary' AND film.length < 60;
 
 
-
+--6 - 3
 SELECT * FROM customer JOIN rental ON customer.customer_id = rental.customer_id 
 JOIN inventory ON rental.inventory_id = inventory.inventory_id 
 JOIN film  ON inventory.film_id = film.film_id
@@ -119,7 +125,7 @@ AND film.rental_rate > 4
 AND (rental.return_date > '2005-07-28' AND rental.return_date < '2005-08-01');
 
 
-
+--6 - 4
 SELECT * FROM customer JOIN rental ON customer.customer_id = rental.customer_id 
 JOIN inventory ON rental.inventory_id = inventory.inventory_id 
 JOIN film  ON inventory.film_id = film.film_id
