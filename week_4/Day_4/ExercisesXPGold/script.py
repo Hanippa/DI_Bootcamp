@@ -19,6 +19,7 @@
 #         Ask the user for a username and make sure it doesn’t exist as a key in our dictionary, if the username is not valid continue asking the user to input a username.
 #         Ask the user for a password. The password is the value.
 import psycopg2
+from hashlib import sha256
 
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
@@ -48,7 +49,7 @@ while user_in != 'exit':
         if user_name in users.keys():
             user_password = input("What is your password? : ")
             print(hash(user_password) , users[user_name])
-            if users[user_name] == hash(user_password):
+            if users[user_name] == sha256(user_password):
                 print("Logged In")
                 logged_in = user_name
                 break
@@ -56,7 +57,7 @@ while user_in != 'exit':
         if su_choice == 'y':
                 user_password = input("What is your password? : ")
                 users[user_name] = user_password
-                insert_new_user(user_name, hash(user_password))
+                insert_new_user(user_name, sha256(user_password))
                 print("Account regisetered successfully!")
                     
 
