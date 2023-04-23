@@ -1,0 +1,101 @@
+{
+    "animals": [
+        {
+            "id" :1,
+            "name": "Cat",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family":1
+        },
+        {
+            "id" :2,
+            "name": "Dog",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 2
+        },
+        {
+            "id" :3,
+            "name": "Wolf",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 2
+        },
+        {
+            "id" :4,
+            "name": "Bear",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 3
+        },
+        {
+            "id" :5,
+            "name": "Weasels",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 4
+        }
+
+    ],
+    "families": [
+        {
+            "id": 1,
+            "name": "Felidae"
+        },
+        {
+            "id": 2,
+            "name": "Caninae"
+        },
+        {
+            "id": 3,
+            "name": "Ursidae"
+        },
+        {
+            "id": 4,
+            "name": "Mustelidae"
+        },
+        {
+            "id": 5,
+            "name": "Procyonidae"
+        },
+        {
+            "id": 6,
+            "name": "Mephitidae"
+        },
+        {
+            "id": 7,
+            "name": "Herpestidae"
+        },
+        {
+            "id": 8,
+            "name": "Hyaenidae"
+        },
+        {
+            "id": 9,
+            "name": "Viverridae"
+        },
+        {
+            "id": 10,
+            "name": "Otariidae"
+        },
+        {
+            "id": 11,
+            "name": "Phocidae"
+        },
+        {
+            "id": 12,
+            "name": "Odobenidae"
+        }
+
+    ]
+}
