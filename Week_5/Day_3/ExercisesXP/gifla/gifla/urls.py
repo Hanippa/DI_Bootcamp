@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gifs.views import add_gif , add_category
+from gifs.views import add_gif , add_category , home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add_gif/', add_gif),
-    path('add_category/', add_category)
+    path('add_category/', add_category),
+    path('', home)
 ]

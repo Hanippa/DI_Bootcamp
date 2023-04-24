@@ -14,7 +14,7 @@ class GifForm(forms.Form):
     uploader_name = forms.CharField(label="Uploader name", max_length=30)
     title = forms.CharField(label="title", max_length=50)
     url = forms.URLField(required=True)
-    # categories = forms.MultipleChoiceField(choices=Category.objects.all(), required=False)
+    categories = forms.MultipleChoiceField(choices=Category.objects.all().values_list() , required=False)
 
 class CategoryForm(forms.Form):
-    title = forms.CharField(label="title", max_length=50)
+    name = forms.CharField(label="title", max_length=50)
