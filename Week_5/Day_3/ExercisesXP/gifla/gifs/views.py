@@ -46,3 +46,14 @@ def add_gif(request):
         form = GifForm()
     return render(request, "add_gif.html", {"form": form})
 
+def category(request,id):
+    gifs = Gifs.objects.filter(id in category)
+    return render(request, "home.html", {"gifs": gifs})
+
+def categories(request):
+    categories = Category.objects.all()
+    return render(request, "categories.html", {"categories": categories})
+
+def gif(request,id):
+    gifs = Gif.objects.filter(id = id)
+    return render(request, "home.html", {"gifs": gifs})

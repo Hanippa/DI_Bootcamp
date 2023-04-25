@@ -2,11 +2,17 @@
 
 {% block content %}
     {% for gif in gifs %}
+    <a href="/gif/{{gif.id}}">
     <div class="image">
         <span>{{gif.title}}</span>
         <img id="" src="{{gif.url}}" alt="">
 
     </div>
     
+</a>
+<div class="likes">
+    <button type="button">like</button> 
+    <button type="button">Dislike</button> 
+    </div>
     {% endfor %}
 {% endblock content %}
