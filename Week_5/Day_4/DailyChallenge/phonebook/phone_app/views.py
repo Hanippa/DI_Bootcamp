@@ -52,10 +52,10 @@ def home(request):
         form = onefourForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, "todos.html")
+            return render(request, "person_info.html")
     else:
         form = onefourForm()
-    return render(request, "home.html", {"form": form})
+        return render(request, "home.html", {"form": form})
 
 
 
