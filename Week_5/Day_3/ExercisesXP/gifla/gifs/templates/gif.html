@@ -1,14 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for gif in gifs %}
+   
     <a href="/gif/{{gif.id}}">
     <div class="image">
         <span>{{gif.title}}</span>
         <img id="" src="{{gif.url}}" alt="">
-
-    </div>
-    
+    </div> 
 </a>
-    {% endfor %}
+<div class="likes">
+    {% csrf_token %}
+    {{gif.likes}}
+    <form method='post'>
+    <input name='applybtn' type="submit" value="Submit">
+    </div>
+</fomr>
 {% endblock content %}

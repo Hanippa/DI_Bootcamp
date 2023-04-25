@@ -40,14 +40,16 @@ def add_gif(request):
             categories = form.cleaned_data['categories']
             new_gif = Gif(title=title, uploader_name=uploader_name, url=url) 
             new_gif.save()
-            new_gif.gifs.add(categories)
+            for category in categories:
+                new_gif.categories.add(category)
             return render(request, "add_gif.html", {"form": form})
     else:
         form = GifForm()
     return render(request, "add_gif.html", {"form": form})
 
 def category(request,id):
-    gifs = Gifs.objects.filter(id in category)
+    category = Category.objects.get(id = id)
+    gifs = category.gifs.all()
     return render(request, "home.html", {"gifs": gifs})
 
 def categories(request):
@@ -55,5 +57,10 @@ def categories(request):
     return render(request, "categories.html", {"categories": categories})
 
 def gif(request,id):
-    gifs = Gif.objects.filter(id = id)
-    return render(request, "home.html", {"gifs": gifs})
+    gif = Gif.objects.get(id = id)
+
+    if 'applybtn' in request.POST:
+        gif.likes = 22
+        gif.save()
+    return render(request, "gif.html", {"gif": gif})
+    
