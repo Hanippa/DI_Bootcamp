@@ -1,0 +1,18 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todo</title>
+  </head>
+  <body>
+    {% for todo in todos%}
+	<h1>title : {{todo.title}}</h1>
+    <h1>creation date : {{todo.date_creation}}</h1>
+    <h1>deadline date : {{todo.deadline_date}}</h1>
+    <h1>category : {{todo.category}}</h1>
+    <button>DONE</button>
+    {%endfor%}
+    <a href="{% url 'create_todo' %}">CREATE NEW TODO</a>
+  </body>
+</html>
