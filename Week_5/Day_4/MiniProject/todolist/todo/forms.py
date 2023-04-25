@@ -5,3 +5,6 @@ class TodoForm(forms.ModelForm):
         model = Todo
         fields = '__all__'
         exclude = {'date_completion' , }
+        widgets = {
+            'deadline_date': forms.DateInput()
+        }
