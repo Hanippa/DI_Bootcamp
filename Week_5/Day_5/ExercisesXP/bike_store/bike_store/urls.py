@@ -19,4 +19,25 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/rent/rental/', admin.site.urls),
+
+path('/rent/rental/<pk>', admin.site.urls),
+
+path('vehicle details', admin.site.urls),
+
+path('/rent/rental/add', admin.site.urls),
+
+path('/rent/customer/<pk> ', admin.site.urls),
+
+path('/rent/customer/', admin.site.urls),
+
+path('/rent/customer/add', admin.site.urls),
+
+path('/rent/vehicle/', admin.site.urls),
+
+path('/rent/vehicle/<pk>', admin.site.urls),
+
+path('/rent/vehicle/add', admin.site.urls)
 ]
+
+

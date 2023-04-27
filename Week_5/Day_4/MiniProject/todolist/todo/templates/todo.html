@@ -6,12 +6,11 @@
     <title>todo</title>
   </head>
   <body>
-    
-    <form method="post" action="/todo/">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
-      </form> 
-      <a href="{% url 'view_all' %}">ALL TODOS</a>
+	<h1>title : {{todo.title}}</h1>
+    <h1>creation date : {{todo.date_creation}}</h1>
+    <h1>deadline date : {{todo.deadline_date}}</h1>
+    <h1>category : {{todo.category}}</h1>
+    <button>DONE</button>
+    <a href="{% url 'create_todo' %}">CREATE NEW TODO</a>
   </body>
 </html>
