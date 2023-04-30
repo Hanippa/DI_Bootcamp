@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Film , Director
-from .forms import AddDirectorForm ,  AddFilmForm , Director , Film
+from .forms import AddDirectorForm ,  AddFilmForm,EditFilmForm,EditDirectorForm , Director , Film
 
 
 # Create your views here.
@@ -24,3 +24,13 @@ class addDirector(generic.CreateView):
     form_class = AddDirectorForm
     model = Director
     template_name = "addDirector.html"
+
+
+class editDirector(generic.UpdateView):
+    form_class = EditDirectorForm
+    model = Director
+    template_name = "editDirector.html"
+class editFilm(generic.UpdateView):
+    form_class = EditFilmForm
+    model = Film
+    template_name = "editDirector.html"

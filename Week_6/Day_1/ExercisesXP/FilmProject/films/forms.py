@@ -11,4 +11,12 @@ class AddDirectorForm(forms.ModelForm):
     class Meta:
         model = Director
         fields = '__all__'
-        
+
+class EditDirectorForm(forms.ModelForm):
+    class Meta:
+        model = Director
+        fields = '__all__'
+class EditFilmForm(forms.ModelForm):
+    class Meta:
+        model = Film
+        fields = '__all__'
