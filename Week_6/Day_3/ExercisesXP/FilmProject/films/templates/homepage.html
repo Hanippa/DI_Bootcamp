@@ -1,0 +1,37 @@
+{% extends 'partials/base.html' %}
+
+
+{%block content%}
+
+
+
+{% for film in  newfilms %}
+<h1>All new Films</h1>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Nausicaaposter.jpg/220px-Nausicaaposter.jpg" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{film.title}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+
+
+        <li class="list-group-item">
+            {% for country in film.available_in_countries.all %}
+            {{country}} , 
+            {% endfor %}
+        </li>
+
+
+        <li class="list-group-item">{{film.release_date}}</li>
+        {% for category in  film.category.all %}
+        <li class="list-group-item">{{category}}</li>
+        {% endfor %}
+        {% for director in  film.director.all %}
+        <li class="list-group-item">{{director}}</li>
+        {% endfor %}
+      </ul>
+  </div>
+
+{% endfor %}
+  
+{%endblock%}
