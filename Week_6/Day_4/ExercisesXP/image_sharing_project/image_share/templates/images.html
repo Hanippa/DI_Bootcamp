@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+{% for image in images %}
+<img src={{image}} alt="image">
+{% endfor %}
+
+{% endblock %}
