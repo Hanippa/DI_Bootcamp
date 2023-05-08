@@ -4,13 +4,14 @@ from rest_framework.generics import GenericAPIView , ListAPIView , DestroyAPIVie
 from .models import Employee , Department , Task , Project
 from .serializers import EmployeeSerializer , ProjectSerializer , TaskSerializer , DepartmentSerializer
 from rest_framework import mixins
+from .permissions import IsDepartmentAdmin
 # Create your views here.
 
 
 class EmployeeListAPIView(ListAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-
+    permission_classes = (IsDepartmentAdmin ,)
     def get_queryset(self):
             queryset = Employee.objects.all()
             name = self.request.query_params.get('name', None)
@@ -29,6 +30,7 @@ class EmployeeCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 class EmployeeRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixin,mixins.ListModelMixin, RetrieveAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    permission_classes = (IsDepartmentAdmin ,)
     def put(self, request , *args , **kwargs):
         return self.update(request, *args , **kwargs)
     def delete(self, request , *args , **kwargs):
@@ -38,7 +40,7 @@ class EmployeeRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixin,
 class DepartmentListAPIView(ListAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
-
+    permission_classes = (IsDepartmentAdmin ,)
     def get_queryset(self):
             queryset = Department.objects.all()
             name = self.request.query_params.get('name', None)
@@ -55,6 +57,7 @@ class DepartmentCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 class DepartmentRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixin,mixins.ListModelMixin, RetrieveAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
+    permission_classes = (IsDepartmentAdmin ,)
     def put(self, request , *args , **kwargs):
         return self.update(request, *args , **kwargs)
     def delete(self, request , *args , **kwargs):
@@ -66,7 +69,7 @@ class DepartmentRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixi
 class ProjectListAPIView(ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-
+    
     def get_queryset(self):
             queryset = Project.objects.all()
             name = self.request.query_params.get('name', None)
@@ -95,7 +98,7 @@ class ProjectRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixin,m
 class TaskListAPIView(ListAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-
+    permission_classes = (IsDepartmentAdmin ,)
     def get_queryset(self):
             queryset = Task.objects.all()
             name = self.request.query_params.get('name', None)
@@ -112,6 +115,7 @@ class TaskCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 class TaskRetrieveAPIView(mixins.DestroyModelMixin, mixins.UpdateModelMixin,mixins.ListModelMixin, RetrieveAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    permission_classes = (IsDepartmentAdmin ,)
     def put(self, request , *args , **kwargs):
         return self.update(request, *args , **kwargs)
     def delete(self, request , *args , **kwargs):
