@@ -12,5 +12,11 @@
 //     If the word “bad” does not come after “not” or the words are not in the sentence, console.log the original sentence.
 
 
-sentence = "not all people are bad"
-wordnot = sentence.indexof("not")
+let sentence = "The movie is not bad, I like it"
+wordnot = sentence.indexOf("not") 
+wordbad = sentence.indexOf("bad") 
+
+if (wordbad === wordnot+4){
+    sentence = sentence.replace('not bad' , 'good')
+}
+console.log(sentence);

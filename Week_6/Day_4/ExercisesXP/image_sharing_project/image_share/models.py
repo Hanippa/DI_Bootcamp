@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='media/', height_field=None, width_field=None, max_length=None , null = True , blank=True)
+    image = models.ImageField(upload_to='image_share/media/', height_field=None, width_field=None, max_length=None , null = True , blank=True)
     title = models.CharField(max_length=50)
     description = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
