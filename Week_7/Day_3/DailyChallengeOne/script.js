@@ -16,7 +16,16 @@ let sentence = "The movie is not bad, I like it"
 wordnot = sentence.indexOf("not") 
 wordbad = sentence.indexOf("bad") 
 
-if (wordbad === wordnot+4){
-    sentence = sentence.replace('not bad' , 'good')
+// if (wordbad === wordnot+4){
+//     sentence = sentence.replace('not bad' , 'good')
+// }
+// console.log(sentence);
+
+
+if (wordbad > wordnot){
+    console.log(sentence.slice(wordnot , wordbad+3))
+    
+    sentence = sentence.replace(sentence.slice(wordnot , wordbad+3) , 'good')
+
 }
-console.log(sentence);
+console.log(sentence)
