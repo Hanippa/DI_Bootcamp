@@ -1,15 +1,14 @@
-user_num = prompt('number of beers')
-if (confirm('Lets start counting beers!')){
-    let counter = 1
-for (let i=user_num ; i >= 0 ; i--){
-    console.log(`${i} bottles of beer on the wall`)
-    console.log(`${i} bottles of beer`)
-    if (i === 1){
-    console.log(`take ${counter} down, pass it around`)
+let input = prompt('number ')
+let counter = 0
+for (let i = Number(input); i >= 0; i = i - counter) {
+    if (i <= 0 || i-counter < 0){
+        console.log(`${i} bottles of beer on the wall \n${i} bottles of beer \nTake ${counter+1} down, pass them around \nno more bottles of beer on the wall`);
+    }
+    else if (i === 1){
+        console.log(`${i} bottles of beer on the wall \n${i} bottles of beer \nTake ${counter+1} down, pass it around \n${i-counter-1} bottles of beer on the wall`);
     }
     else{
-        console.log(`take ${counter} down, pass them around`)
+        console.log(`${i} bottles of beer on the wall \n${i} bottles of beer \nTake ${counter+1} down, pass them around \n${i-counter-1} bottles of beer on the wall`);
     }
     counter++
-}
-}
+};
