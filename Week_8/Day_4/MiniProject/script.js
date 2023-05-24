@@ -1,7 +1,7 @@
 
 const grid_container = document.getElementsByClassName('grid-container')[0]
 const color_container = document.getElementsByClassName('color-container')[0]
-let grid_width = 50
+let grid_width = 50 
 let grid_height = 25
 let color_choice = ''
 let hover = false
@@ -43,3 +43,10 @@ for(let i=0;i<grid_height;i++){
 
 }
 
+pixels = document.getElementsByClassName('pixel')
+clear = document.getElementsByClassName('clear')[0]
+clear.addEventListener('click', () => {
+for (pixel of pixels){
+  pixel.style.backgroundColor = 'white'
+}
+});
