@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(49, 52, 68);
+    overflow-y: auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(56, 56, 56, 0.267);
+}
+.logo{
+    margin: 20px;
+    font-size: 30px;
+    color: rgb(255, 197, 90);
+}
+.search{
+    width: 70%;
+}
+.search input{
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+.robots-container{
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.robot-container{
+    width: 30%;
+    height: 500px;
+    background-color: rgba(94, 94, 94, 0.192);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 30px;
+}
+.robot-image{
+    width: 400px;
+    border-radius: 100%;
+    height: 400px;
+    background-position: 40% 10%;
+    background-size: cover;
+    box-shadow: 25px 25px 50px 0 rgba(94, 94, 94, 0.192) inset, -25px -25px 50px 0 rgba(94, 94, 94, 0.192) inset; 
+    opacity: 70%;
+
+}
+.robot-name{
+    margin: 40px;
+}
