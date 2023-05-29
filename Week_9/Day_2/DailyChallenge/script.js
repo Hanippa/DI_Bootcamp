@@ -126,22 +126,35 @@ const toJs = () => {
     });
 };
 
-const toMorse = (morsejs) => {
-    const userstring = prompt('enter a word or sentence')
-    return new Promise((resolve , reject) => {
-        console.log(morsejs)
-        if (Object.keys(morsejs).includes(userstring.split(''))){
-            
-            resolve('o')
-        }
-        else{
-            reject('x')
-        }
-    })
 
+const toMorse = obj => {
+    let input = prompt('input a word');
+    return new Promise((yep,nope) => {
+        let out = []
+        for (let letter of input) {
+            if (obj.hasOwnProperty(letter)) {
+                    const element1 = obj[letter];
+                    out.push(element1)
+            } else{
+                nope('this character is not in morse code')
+            }
+        }
+        yep(out)
+    })
 }
+
+const joinWords = arr => {
+    let out = arr.join()
+    return out
+} 
+
+toJs(morse)
+.then(toJs_res => {
+    return toMorse(toJs_res)
+})
+.then(toMorse_res => {
+    console.log(joinWords(toMorse_res));
+})
 
 
 toJs().then(result1 =>  result1).then(result2 => toMorse(result2).then(result3 => console.log(result3)))
-
-// toMorse(morsejs).then(result => console.log(result))

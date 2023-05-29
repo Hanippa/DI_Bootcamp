@@ -153,24 +153,21 @@ const onePieceQuotes = [
     }
   ];
 
-let selected = -1 
+let selected = -1; 
 generate_quate.addEventListener('click' , () => {
-    
     try {
         section.getElementsByTagName('h1')[0].remove()
       }
       catch(err) {
         console.log('enjoy!')
-      }
+      };
 
 
     
     let random = Math.floor(Math.random() * 30);
-    while(random === selected){
-    random = Math.floor(Math.random() * 30);
-    console.log(random)}
-    selected = random
-    const h1 = document.createElement('h1')
-    h1.innerText = `quote : ${onePieceQuotes[random].quote} \n author : ${onePieceQuotes[random].author}`
-    section.append(h1)
-})
+    while(random === selected){random = Math.floor(Math.random() * 30);};
+    selected = random;
+    const h1 = document.createElement('h1');
+    h1.innerText = `quote : ${onePieceQuotes[random].quote} \n author : ${onePieceQuotes[random].author}`;
+    section.append(h1);
+});
