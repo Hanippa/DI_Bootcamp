@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const emailError = document.getElementById('emailError');
+      const messageError = document.getElementById('messageError');
+      let isValid = true;
+
+      if (emailInput.value === '') {
+        emailError.textContent = 'Email is required';
+        isValid = false;
+      } else {
+        emailError.textContent = '';
+      }
+
+      if (messageInput.value === '') {
+        messageError.textContent = 'Message is required';
+        isValid = false;
+      } else {
+        messageError.textContent = '';
+      }
+
+      return isValid;
+    }
+  </script>
+</head>
+<body>
+  <h1>Contact Me</h1>
+  <form action="/form" method="POST" onsubmit="return validateForm()">
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error" id="emailError"></span>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+      <span class="error" id="messageError"></span>
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</body>
+</html>
