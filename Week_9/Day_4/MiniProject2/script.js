@@ -31,7 +31,7 @@ const fetchConvertion = async (currencyfrom , currencyto) => {
 }
 
 const displayResult = (value) => {
-    finalresult.innerHTML = value*amount.value  
+    finalresult.innerHTML = (value*amount.value).toFixed(2)
 }
 
 amount.addEventListener('input' , () => {fetchConvertion(from.value , to.value).then(result => displayResult(result))})

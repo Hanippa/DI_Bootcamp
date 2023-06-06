@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "Apples",
+      "price": 2.99
+    },
+    {
+      "name": "Milk",
+      "price": 1.99
+    },
+    {
+      "name": "Bread",
+      "price": 3.49
+    },
+    {
+      "name": "Eggs",
+      "price": 2.49
+    },
+    {
+      "name": "Chicken",
+      "price": 6.99
+    }
+  ]
+}
