@@ -23,13 +23,25 @@ const getfactsitems = async () => {
 
   const searhcitemscategory = async (category) => {
     let feed = await parser.parseURL('https://thefactfile.org/feed/');
-    return feed.items
+    let categorysearch = []
+    for(item of feed.items){
+      if (item.categories.includes(category)){
+       categorysearch.push(item)
+      }
+    }
+    return categorysearch
   };
 
   
   const searhcitemstitle = async (title) => {
     let feed = await parser.parseURL('https://thefactfile.org/feed/');
-    return feed.items
+    let titlesearch = []
+    for(item of feed.items){
+      if (item.title.includes(title)){
+        titlesearch.push(item)
+      }
+    }
+    return titlesearch
   };
 
 module.exports = {

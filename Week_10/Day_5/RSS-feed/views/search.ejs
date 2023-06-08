@@ -34,17 +34,7 @@
             </div>
             <div class="results-container">
             <h1 class="title">results</h1>
-            <% for(const item of items) { %>
-        
-                <div class="box">
-                    <h2><%= item.title %></h2>
-                    <p><%= item.pubDate %> | <%= item.creator %> | <%= item.categories %></p>
-                    <%- item.content %>
-                    
-                </div>
-                <hr>
             
-            <% } %>
     </div>
 </div>
         <%- include('footer') %>
