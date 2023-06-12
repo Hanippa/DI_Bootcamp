@@ -1,0 +1,22 @@
+*{
+    font-size: 40px;
+}
+.language-container{
+    display: flex;
+    width: 500px;
+    background-color: rgba(121, 121, 121, 0.281);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+.language-container button{
+    font-size: 20px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.253);
+}
