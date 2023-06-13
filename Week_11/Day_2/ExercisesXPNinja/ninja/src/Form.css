@@ -1,0 +1,20 @@
+.sform{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 500px;
+    background-color: rgba(128, 128, 128, 0.384);
+    border-radius: 20px;
+    padding: 10px;
+}
+label{
+    margin-left: 20px;
+    text-align: left;
+}
+input{
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.582);
+    border: none;
+}
