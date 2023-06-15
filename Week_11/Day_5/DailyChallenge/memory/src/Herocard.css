@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+}
+.hero-card{
+    width: 300px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 30px;
+    font-size: 20px;
+}
+.hero-card img{
+    width: 280px;
+    height: 280px;
+    margin: 10px;
+    border-radius: 20px;
+}
