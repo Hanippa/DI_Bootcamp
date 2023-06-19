@@ -3,13 +3,22 @@ import { INSERT, DELETE , UPDATE , UPDATE_INDEX } from "../redux/actions";
 const TransactionList = (params) => {
     
     const updatefunc = (index) =>{
-        console.log('presesd', index)
-        params.updateinputs({...params.transactions[index]})
+        params.updateinputs({...params.transactions[index]} , index)
     }
     return (
         <div>
-            <h1>List</h1>
+            <h1>Transactions exercise xp week 12 day 2 redux</h1>
             <table>
+                <thead>
+                    <tr>
+                        <th>account number</th>
+                        <th>FSC</th>
+                        <th>name</th>
+                        <th>amount</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
                 <tbody>
                 {
                     

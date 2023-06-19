@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import TransactionForm from './components/TransactionForm'
 
 function App() {

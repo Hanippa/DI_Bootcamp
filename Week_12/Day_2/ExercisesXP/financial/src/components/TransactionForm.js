@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+
 import { INSERT, DELETE , UPDATE , UPDATE_INDEX } from "../redux/actions";
 import TransactionList from "./TransactionList";
-
+import './TransactionForm.css';
 
 
 const TransactionForm = (params) => {
+    const dispatch = useDispatch()
 
     const [transaction , setTransaction] = useState( {
         accountNumber : '',
@@ -22,27 +24,28 @@ const TransactionForm = (params) => {
         setTransaction({...transaction , [e.target.name] : data})
     }
     const handleSubmit = (e) => {
-        console.log('handle submit');
+       
         e.preventDefault()
-        localStorage.setItem("transactions-storage",JSON.stringify([...params.transactions ,transaction]));
-        params.insert(transaction)
+        if(params.currentIndex < 0){
+
+            console.log('inserting');
+            localStorage.setItem("transactions-storage",JSON.stringify([...params.transactions ,transaction]));
+            params.insert(transaction)
+        }
+        else{
+
+            const transactionarr = [...params.transactions];
+
+            transactionarr[params.upda] = {...transaction};
+            
+            params.update(transaction)
+            dispatch({type:'UPDATE-INDEX' , payload : -1});
+        }
+        setTransaction({accountNumber : '',FSC : '',name :'',amount:''});
     }
-    const handleUpdate = (e , index) => {
-        console.log('handleupdate')
-        e.preventDefault()
-        const transactionarr = [...params.transactions]
-        transactionarr[index] = {...transaction}
-        console.log('transactiono arrya => ',transaction)
-        // localStorage.setItem("transactions-storage",JSON.stringify([...transactionarr]));
-        // params.update(transaction)
-        const form = document.getElementById("tranform")
-        form.onsubmit = handleSubmit
-    }
-    const updateinputs = (obj) => {
+    const updateinputs = (obj , index) => {
         setTransaction(obj)
-        const form = document.getElementById("tranform")
-        form.onsubmit = handleUpdate
-        console.log(form.onsubmit);
+        dispatch({type:'UPDATE-INDEX' , payload : index});
     }
 
     
