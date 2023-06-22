@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 
 const Postcard = (params) => {
     return (
-        <div className="row">
+        <div className="row home">
         <div className="col s12 m6">
           <div className="card blue-grey darken-1">
-            <div className="card-content white-text">
+            <div className="card-content white-text post">
                 
               <span className="card-title">  {params.title}</span>
               <p>{params.body}</p>
